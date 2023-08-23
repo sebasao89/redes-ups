@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "redes-ups": {
+      "hosting": {
+        "redes-ups": [
+          "redes-ups"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "redes-ups"
+  }
+}
