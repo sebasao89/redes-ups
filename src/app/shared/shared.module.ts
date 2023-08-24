@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -10,7 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    
+    MaterialModule
   ],
   exports: [
     Error404PageComponent
