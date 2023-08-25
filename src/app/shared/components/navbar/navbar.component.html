@@ -1,16 +1,21 @@
-<mat-toolbar color="primary">
-    <button mat-button (click)="sidenav.toggle()">Abrir/Cerrar Sidenav</button>
-    <span>Barra de herramientas de Angular Material</span>
-</mat-toolbar>
+<div class="h-screen flex flex-col">
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+      <span>Redes ups y seguridad</span>
+  </mat-toolbar>
 
-<mat-sidenav-container class="flex-1">
-    <mat-sidenav #sidenav mode="side" class="h-full">
-      <!-- Contenido del sidenav -->
-      <p>Contenido del sidenav</p>
-    </mat-sidenav>
-    <mat-sidenav-content class="flex-1">
-      <!-- Contenido principal -->
-      hola
-      <!-- <router-outlet></router-outlet>         -->
-    </mat-sidenav-content>
-</mat-sidenav-container>
+  <mat-sidenav-container class="flex-1">
+      <mat-sidenav #sidenav mode="side" class="h-full">
+        <!-- Contenido del sidenav -->
+        <p>Contenido del sidenav</p>
+        <p>ingreso</p>
+      </mat-sidenav>
+      <mat-sidenav-content class="flex-1">
+        <!-- Contenido principal -->
+        hola
+        <!-- <router-outlet></router-outlet>         -->
+      </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

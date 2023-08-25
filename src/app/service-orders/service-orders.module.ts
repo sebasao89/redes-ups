@@ -8,7 +8,6 @@ import { LayoutPagesComponent } from './pages/layout-pages/layout-pages.componen
 import { OrderPageComponent } from './pages/order-page/order-page.component';
 import { ListOrderPageComponent } from './pages/list-order-page/list-order-page.component';
 import { NewOrderPageComponent } from './pages/new-order-page/new-order-page.component';
-import { NavbarComponent } from '../shared/components/navbar/navbar.component';
 
 
 @NgModule({
@@ -17,7 +16,6 @@ import { NavbarComponent } from '../shared/components/navbar/navbar.component';
     OrderPageComponent,
     ListOrderPageComponent,
     NewOrderPageComponent,
-    NavbarComponent
   ],
   imports: [
     CommonModule,
