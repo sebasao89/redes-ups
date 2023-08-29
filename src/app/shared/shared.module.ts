@@ -10,10 +10,11 @@ import { MaterialModule } from '../material/material.module';
     NavbarComponent
   ],
   imports: [
-    MaterialModule
+    MaterialModule,
   ],
   exports: [
-    Error404PageComponent
+    Error404PageComponent,
+    NavbarComponent
   ]
 })
 export class SharedModule { }
