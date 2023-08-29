@@ -1,16 +1,30 @@
 <div class="h-screen flex flex-col">
-  <mat-toolbar color="primary">
+
+  <mat-toolbar color="primary" class="toolbar">
     <button mat-icon-button (click)="sidenav.toggle()" [matTooltip]="sidenav.opened ? 'Cerrar Menú' : 'Abrir Menú'">
       <mat-icon>menu</mat-icon>
     </button>
-      <span>Redes ups y seguridad</span>
+    <span>Redes ups y seguridad</span>
+    <span class="flex-grow"></span>
+    <div class="buttons">
+      <button mat-button>
+        Botón 1
+      </button>
+      <button mat-button>
+        Botón 2
+      </button>
+    </div>
   </mat-toolbar>
 
   <mat-sidenav-container class="flex-1">
-      <mat-sidenav #sidenav mode="side" class="h-full">
+      <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpened" class="h-full w-64">
         <!-- Contenido del sidenav -->
-        <p>Contenido del sidenav</p>
-        <p>ingreso</p>
+        <mat-list>
+          <mat-list-item>Item 1</mat-list-item>
+          <mat-list-item>Item 2</mat-list-item>
+          <mat-list-item>Item 3</mat-list-item>
+          <!-- Agrega más elementos de la lista aquí -->
+        </mat-list>
       </mat-sidenav>
       <mat-sidenav-content class="flex-1">
         <!-- Contenido principal -->
