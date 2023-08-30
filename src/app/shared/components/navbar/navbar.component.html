@@ -19,20 +19,28 @@
   </mat-toolbar>
 
   <mat-sidenav-container class="flex-1">
-      <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpened" class="h-full w-64">
-        <!-- Contenido del sidenav -->
-        <mat-list>
-          <mat-list-item>
-            <mat-icon>dashboard</mat-icon>
-            Dashboard
-          </mat-list-item>
-          <mat-list-item>
-            <mat-icon>build</mat-icon>
-            Visitas tecnicas
-          </mat-list-item>
-          <!-- Agrega más elementos de la lista aquí -->
-        </mat-list>
-      </mat-sidenav>
+    <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpened" class="h-full w-60">
+      <!-- Contenido del sidenav -->
+      <mat-list>
+        <a
+          [routerLink]="['/dashboard']"
+          routerLinkActive
+          class="flex items-center p-4 hover:bg-gray-200 transition-colors"
+        >
+          <mat-icon class="mr-2">dashboard</mat-icon>
+          <span class="font-medium">Dashboard</span>
+        </a>
+        <a
+          routerLink="/service-orders"
+          routerLinkActive
+          class="flex items-center p-4 hover:bg-gray-200 transition-colors"
+        >
+          <mat-icon class="mr-2">build</mat-icon>
+          <span class="font-medium">Visitas tecnicas</span>
+        </a>
+        
+      </mat-list>
+    </mat-sidenav>
       <mat-sidenav-content class="flex-1">
         <!-- Contenido principal -->        
         <ng-content></ng-content>        

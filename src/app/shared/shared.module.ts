@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
-import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { MaterialModule } from '../material/material.module';
+import { RouterModule } from '@angular/router';
+
+
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 
 
 @NgModule({
@@ -10,6 +13,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
+    RouterModule,
     MaterialModule,
   ],
   exports: [
