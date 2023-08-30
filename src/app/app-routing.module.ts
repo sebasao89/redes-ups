@@ -5,10 +5,6 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: NavbarComponent
-  },
-  {
     path:'auth',
     loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule)
   },
@@ -21,7 +17,7 @@ const routes: Routes = [
     component: Error404PageComponent
   },
   {
-    path: 'service-orders',
+    path: '',
     redirectTo: 'service-orders',
     pathMatch: 'full'
   },
