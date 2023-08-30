@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Error404PageComponent } from './shared/pages/error404-page/error404-page.component';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
 
 const routes: Routes = [
   {
@@ -11,6 +10,10 @@ const routes: Routes = [
   {
     path: 'service-orders',
     loadChildren: () => import('./service-orders/service-orders.module').then( m => m.ServiceOrdersModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardModule)
   },
   {
     path: '404',
