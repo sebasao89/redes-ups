@@ -1,44 +1,63 @@
-import { Component, ViewChild, AfterViewInit, HostListener, ChangeDetectorRef } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements AfterViewInit{
+export class NavbarComponent implements OnInit{
 
-  @ViewChild('sidenav') sidenav!: MatSidenav;
+  public sidenavItems = [
+    { label: 'dashboard',
+      icon:'dashboard',
+      url: '/dashboard',
+      color: 'warn'
+    },
+    { label: 'Visitas tecnicas',
+      icon:'build',
+      url: '/service-orders',
+      color: 'warn',
+      submenu: [
+        { label: 'Registrar',
+          icon: 'add',
+          url:"/service-orders/new-order",
+          color: 'warn'
+        },
+        { label: 'Editar',
+          icon: 'edit',
+          url:"/service-orders/new-order",
+          color: 'warn'
+        },
+      ]
+    }
+  ]  
+  
+  constructor() {}
 
-  isSidenavOpened = false; // Inicialmente cerrado en pantallas pequeñas
-
-  constructor(private cdRef: ChangeDetectorRef) {}
-
-  ngAfterViewInit() {
-    this.updateSidenavState();
-    this.cdRef.detectChanges();
+  ngOnInit(): void {
+    this.updateSidenavState
   }
 
-  private updateSidenavState() {
+  public updateSidenavState() {
     if (window.innerWidth > 768) {
-      this.sidenav.open();
+      return true
     } else {
-      this.sidenav.close();
+      return false
     }
   }
+  
+  
 
-  toggleSidenav() {
-    this.isSidenavOpened = !this.isSidenavOpened;
-    if (this.isSidenavOpened && window.innerWidth <= 768) {
-      this.sidenav.open();
-    }
-  }
+  
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.updateSidenavState();
-    this.cdRef.detectChanges();
-  }
+  // toggleSidenav() {
+  //   this.isSidenavOpened = !this.isSidenavOpened;
+  //   if (this.isSidenavOpened && window.innerWidth <= 768) {
+  //     this.sidenav.open();
+  //   }
+  // }
+
+
   
 }
 
