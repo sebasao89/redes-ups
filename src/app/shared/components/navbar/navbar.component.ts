@@ -9,24 +9,20 @@ export class NavbarComponent implements OnInit{
 
   public sidenavItems = [
     { label: 'dashboard',
-      icon:'dashboard',
+      icon:'space_dashboard',
       url: '/dashboard',
-      color: 'warn'
     },
     { label: 'Visitas tecnicas',
-      icon:'build',
+      icon:'engineering',
       url: '/service-orders',
-      color: 'warn',
       submenu: [
         { label: 'Registrar',
           icon: 'add',
           url:"/service-orders/new-order",
-          color: 'warn'
         },
         { label: 'Editar',
           icon: 'edit',
-          url:"/service-orders/new-order",
-          color: 'warn'
+          url:"/service-orders/new-order", 
         },
       ]
     }
@@ -45,18 +41,6 @@ export class NavbarComponent implements OnInit{
       return false
     }
   }
-  
-  
-
-  
-
-  // toggleSidenav() {
-  //   this.isSidenavOpened = !this.isSidenavOpened;
-  //   if (this.isSidenavOpened && window.innerWidth <= 768) {
-  //     this.sidenav.open();
-  //   }
-  // }
-
 
   
 }

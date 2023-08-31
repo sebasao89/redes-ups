@@ -9,9 +9,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
-import {MatExpansionModule} from '@angular/material/expansion';
-import { MatSelectModule } from '@angular/material/select';
-
 
 
 @NgModule({
@@ -26,8 +23,6 @@ import { MatSelectModule } from '@angular/material/select';
     MatSidenavModule,
     MatTooltipModule,
     MatListModule,
-    MatExpansionModule,
-    MatSelectModule
   ]
 })
 export class MaterialModule { }

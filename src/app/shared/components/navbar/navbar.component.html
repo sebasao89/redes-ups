@@ -12,7 +12,7 @@
         Usuario
       </button>
       <button mat-button>
-        <mat-icon>exit_to_app</mat-icon>
+        <mat-icon>logout</mat-icon>
         Salir
       </button>
     </div>
@@ -25,6 +25,7 @@
       <mat-list class="w-60">
         <ng-container *ngFor="let item of sidenavItems">
           <mat-list-item [routerLink]="item.url">
+            <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
             {{ item.label }}
           </mat-list-item>
         </ng-container>
