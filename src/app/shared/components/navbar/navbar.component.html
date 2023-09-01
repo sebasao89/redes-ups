@@ -1,7 +1,8 @@
 <div class="h-screen flex flex-col">
 
   <mat-toolbar color="primary" class="toolbar">
-    <button mat-icon-button (click)="sidenav.toggle()" [matTooltip]="sidenav.opened ? 'Cerrar Menú' : 'Abrir Menú'">
+    <!-- <button mat-icon-button (click)="sidenav.toggle()" [matTooltip]="sidenav.opened? 'Cerrar Menu' : 'Abrir Menu'"> -->
+    <button mat-icon-button (click)="sidenav.toggle()" [matTooltip]="'Abrir/Cerrar'">
       <mat-icon>menu</mat-icon>
     </button>
     <span>Redes ups y seguridad</span>
