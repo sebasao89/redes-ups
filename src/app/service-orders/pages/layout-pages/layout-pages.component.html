@@ -1,11 +1,16 @@
 <app-navbar>
-    <p>
-        <mat-toolbar>
-          <mat-icon>feed</mat-icon>
-          <span>Visitas tecnicas</span>
-        </mat-toolbar>
-    </p>
-    <div class="container pl-4 pr-4">
+    <mat-toolbar class="toolbar">
+      <mat-icon>feed</mat-icon>
+      <span>Visitas tecnicas</span>
+      <span class="flex-grow"></span>
+      <div class="buttons">
+        <button mat-flat-button color="accent">
+          <mat-icon>add</mat-icon>
+          Nuevo Registro
+        </button>
+      </div>
+    </mat-toolbar>
+    <div>
       <router-outlet></router-outlet>
     </div>
 </app-navbar>
