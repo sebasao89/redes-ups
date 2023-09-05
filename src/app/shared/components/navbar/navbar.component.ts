@@ -25,6 +25,10 @@ export class NavbarComponent implements OnInit{
           url:"/service-orders/new-order", 
         },
       ]
+    },
+    { label: 'Empresas',
+      icon:'apartment',
+      url: '/empresas'
     }
   ]  
   
