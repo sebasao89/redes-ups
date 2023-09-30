@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'service-orders',
+    redirectTo: 'empresas',
     pathMatch: 'full'
   },
   {
