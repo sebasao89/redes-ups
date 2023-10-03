@@ -1,5 +1,12 @@
 <div class="container mx-auto mt-8">
     <div class="m-7">
         <p>list-empresa-page works!</p>
+        <div *ngFor="let empresa of empresas">
+            <p>{{ empresa.nombre }}</p>
+            <p>{{ empresa.numDocumento }}</p>
+            <p>{{ empresa.direccion }}</p>
+          </div>
     </div>
-</div>    
+</div> 
+
+

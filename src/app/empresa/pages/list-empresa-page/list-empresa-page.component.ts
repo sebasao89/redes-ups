@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Empresa from 'src/app/interfaces/empresa.interface';
 import { EmpresaService } from 'src/app/services/empresa.service';
 
 @Component({
@@ -8,12 +9,14 @@ import { EmpresaService } from 'src/app/services/empresa.service';
 })
 export class ListEmpresaPageComponent implements OnInit {
 
+  empresas: Empresa[] = [];
+  
   constructor( private empresasService: EmpresaService) {}
 
   ngOnInit(): void {
     this.empresasService.getEmpresas().subscribe( empresas => {
       console.log(empresas)
-    
+      this.empresas = empresas
     })
   }
 

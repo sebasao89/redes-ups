@@ -1,12 +1,12 @@
 export default interface Empresa {
     id: number;
-    typeDocument: string;
-    numDocument: number;
-    DigVerification?: number;
-    name: string;
-    address: string;
-    phone: string;
-    email: string;
+    TipoDocumento: string;
+    numDocumento: number;
+    digitoVerificacion?: number;
+    nombre: string;
+    direccion: string;
+    telefono: string;
+    correo: string;
     latitude?: number;
     longitude?: number;
     description?: string
