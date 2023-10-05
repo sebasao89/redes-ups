@@ -9,7 +9,7 @@ import { EmpresaService } from 'src/app/services/empresa.service';
 })
 export class ListEmpresaPageComponent implements OnInit {
 
-  empresas: Empresa[] = [];
+  public empresas: Empresa[] = [];
   
   constructor( private empresasService: EmpresaService) {}
 
