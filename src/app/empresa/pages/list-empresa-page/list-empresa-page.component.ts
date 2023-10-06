@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import Empresa from 'src/app/interfaces/empresa.interface';
 import { EmpresaService } from 'src/app/services/empresa.service';
 
@@ -10,13 +11,16 @@ import { EmpresaService } from 'src/app/services/empresa.service';
 export class ListEmpresaPageComponent implements OnInit {
 
   public empresas: Empresa[] = [];
+  public dataSource = new MatTableDataSource<Empresa>();
+  public columnas: string[] = ['nombre', 'numeroDocumento', 'direccion', 'telefono'];
   
   constructor( private empresasService: EmpresaService) {}
 
   ngOnInit(): void {
     this.empresasService.getEmpresas().subscribe( empresas => {
       console.log(empresas)
-      this.empresas = empresas
+      // this.empresas = empresas
+      this.dataSource.data = empresas
     })
   }
 
