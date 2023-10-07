@@ -4,9 +4,13 @@
       <span class="ml-2">Empresas</span>
       <span class="flex-grow"></span>
       <div class="buttons">
-        <button mat-flat-button color="accent" routerLink="./new-empresa">
+        <button mat-flat-button color="accent" routerLink="./new-empresa" class="mr-2">
           <mat-icon>add</mat-icon>
-          Nueva Empresa
+          <span class="hidden md:block">Adicionar</span>
+        </button>
+        <button mat-flat-button color="accent" routerLink="./list-empresas">
+          <mat-icon>reply</mat-icon>
+          Atras
         </button>
       </div>
     </mat-toolbar>

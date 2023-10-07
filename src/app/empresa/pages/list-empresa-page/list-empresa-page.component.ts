@@ -12,7 +12,7 @@ export class ListEmpresaPageComponent implements OnInit {
 
   public empresas: Empresa[] = [];
   public dataSource = new MatTableDataSource<Empresa>();
-  public columnas: string[] = ['nombre', 'numeroDocumento', 'direccion', 'telefono'];
+  public columnas: string[] = ['nombre', 'numeroDocumento', 'direccion', 'telefono', 'Acciones'];
   
   constructor( private empresasService: EmpresaService) {}
 
