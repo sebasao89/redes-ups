@@ -1,6 +1,6 @@
 export default interface Empresa {
     id: number;
-    TipoDocumento: string;
+    tipoDocumento: TipoDocumento;
     numDocumento: number;
     digitoVerificacion?: number;
     nombre: string;
@@ -10,4 +10,9 @@ export default interface Empresa {
     latitude?: number;
     longitude?: number;
     description?: string
+}
+
+export enum TipoDocumento {
+    cedulaCiudadania = "Cedula de ciudadania",
+    nit = "NIT",
 }
