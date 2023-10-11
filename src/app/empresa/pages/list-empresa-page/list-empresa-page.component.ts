@@ -19,14 +19,15 @@ export class ListEmpresaPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.empresasService.getEmpresas().subscribe( empresas => {
-      console.log(empresas)
+      // console.log(empresas)
       // this.empresas = empresas
       this.dataSource.data = empresas
     })
   }
 
-  verDetalle(id: string) {
-    this.router.navigate(['empresas/',id])
+  getEmpresaById(empresaId: string) {
+    this.router.navigate(['empresas/', empresaId])
   }
+
 
 }

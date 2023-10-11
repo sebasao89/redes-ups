@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData, addDoc } from '@angular/fire/firestore';
+import { Firestore, collection, collectionData, doc, getDoc} from '@angular/fire/firestore';
 import Empresa from '../interfaces/empresa.interface';
 import { Observable } from 'rxjs';
 
@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EmpresaService {
+
+  empresaById: Empresa[] = []
 
   // Inyectar el servicio de firestore
   constructor( private firestore: Firestore) { }
@@ -16,9 +18,9 @@ export class EmpresaService {
     return collectionData(empresaRef, { idField: 'id' }) as Observable<Empresa[]>
   }
 
-  addEmpresas( empresa: Empresa ) {
-    const empresaRef = collection(this.firestore, 'empresas')
-    return addDoc(empresaRef, empresa)
+  getEmpresaById(empresaId: string) {
+    const empresaRef = doc(this.firestore, 'empresas', empresaId)
+    return getDoc(empresaRef)
   }
 
 }
