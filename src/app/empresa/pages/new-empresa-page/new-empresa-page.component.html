@@ -1,11 +1,14 @@
 <div class="container mx-auto mt-8">
     <div class="w-full md:w-3/4 lg:w-2/3 xl:w-300 mx-auto">
-      <h3 class="text-2xl font-semibold mb-4"><b>Añadir una nueva empresa</b></h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">        
+      <h3 class="text-2xl font-semibold mb-4">
+        <b>Añadir / Editar una empresa </b>
+        <small> Empresa</small>
+      </h3>
+      <div>        
         <div class="md:flex lg:flex col-span-3 gap-4">
           <mat-form-field class="w-full">
             <mat-label>Tipo de Documento</mat-label>
-            <mat-select>
+            <mat-select required="">
               <mat-option value="cedula">NIT</mat-option>
               <mat-option value="pasaporte">Cédula</mat-option>
               <!-- Agrega más tipos de documento si es necesario -->
@@ -14,7 +17,7 @@
   
           <mat-form-field class="w-full">
             <mat-label>Número de Documento</mat-label>
-            <input matInput placeholder="Número de Documento">
+            <input matInput placeholder="Número de Documento" type="number" required="">
           </mat-form-field>
   
           <mat-form-field class="w-full">
@@ -24,7 +27,7 @@
         </div>
         <div class="md:flex lg:flex col-span-3 gap-4">
           <mat-form-field class="w-full">
-            <input matInput placeholder="Nombre">
+            <input matInput placeholder="Nombre" type="text" required="">
           </mat-form-field>
   
           <mat-form-field class="w-full">
@@ -35,14 +38,23 @@
             <input matInput placeholder="Teléfono">
           </mat-form-field>
         </div>
-        <div class="md:flex lg:flex">
+        <div class="md:flex lg:flex col-span-3 gap-4">
           <mat-form-field class="w-full">
             <input matInput placeholder="Correo electrónico">
           </mat-form-field>
+
+          <mat-form-field class="w-full">
+            <input matInput placeholder="Latitud" type="number">
+          </mat-form-field>
+
+          <mat-form-field class="w-full">
+            <input matInput placeholder="Longitud" type="number">
+          </mat-form-field>
         </div>
-      </div>
+      </div>      
       <div class="flex justify-center mb-10">
-        <button mat-raised-button color="primary" type="submit">Guardar</button>
+        <button mat-raised-button color="primary" type="submit" class="mr-2">Guardar</button>
+        <button mat-raised-button color="warn" type="submit" class="mr-2">Eliminar</button>
       </div>
     </div>
   </div>

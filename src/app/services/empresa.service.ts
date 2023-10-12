@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData, doc, getDoc} from '@angular/fire/firestore';
+import { Firestore, collection, collectionData, doc, getDoc, addDoc} from '@angular/fire/firestore';
 import Empresa from '../interfaces/empresa.interface';
 import { Observable } from 'rxjs';
 
@@ -18,9 +18,24 @@ export class EmpresaService {
     return collectionData(empresaRef, { idField: 'id' }) as Observable<Empresa[]>
   }
 
-  getEmpresaById(empresaId: string) {
-    const empresaRef = doc(this.firestore, 'empresas', empresaId)
-    return getDoc(empresaRef)
+  async getEmpresaById(empresaId: string): Promise<Empresa> {
+    const empresaRef = doc(this.firestore, 'empresas', empresaId);
+
+    try {
+        const docSnap = await getDoc(empresaRef);
+        if (docSnap.exists()) {
+            const data = docSnap.data() as Empresa;
+            return data;
+        } else {
+            throw new Error("Documento no encontrado!");
+        }
+    } catch (error) {
+        throw error;
+    }
+  }
+
+  addEmpresa(empresa: Empresa) {
+    addDoc(collection(this.firestore, 'empresas'), empresa)
   }
 
 }

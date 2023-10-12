@@ -16,14 +16,19 @@ export class EmpresaPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.activeRoute.paramMap.subscribe( (params) => {
-      const id = params.get('id')
-      this.empresaId = id !== null ? id: ''
-      // const docSnap = this.empresaService.getEmpresaById(this.empresaId)
+    this.activeRoute.paramMap.subscribe(async (params) => {
+        const id = params.get('id');
+        this.empresaId = id !== null ? id : '';
 
-      console.log(this.empresaId)
-      
-    })
+        try {
+            const empresaData = await this.empresaService.getEmpresaById(this.empresaId);
+            console.log(empresaData);
+        } catch (error) {
+            console.error(error);
+        }
+    });
+
+
   }
 
   
