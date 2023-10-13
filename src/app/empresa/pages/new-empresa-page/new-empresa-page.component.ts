@@ -13,16 +13,16 @@ export class NewEmpresaPageComponent {
   constructor( public empresaService: EmpresaService ) {}
 
   public empresaForm = new FormGroup({
-    id: new FormControl(''),
+    id: new FormControl(),
     tipoDocumento: new FormControl<TipoDocumento>( TipoDocumento.nit ),
-    numDocumento: new FormControl<number>(0),
-    digitoVerificacion: new FormControl<number>(0),
+    numDocumento: new FormControl(),
+    digitoVerificacion: new FormControl(),
     nombre: new FormControl<string>(''),
     direccion: new FormControl<string>(''),
     telefono: new FormControl<string>(''),
     correo: new FormControl<string>(''),
-    latitude: new FormControl<number>(0),
-    longitude: new FormControl<number>(0),
+    latitude: new FormControl(),
+    longitude: new FormControl(),
     descripcion: new FormControl<string>('')
   })
 
