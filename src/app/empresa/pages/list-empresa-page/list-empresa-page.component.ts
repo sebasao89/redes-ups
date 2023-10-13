@@ -11,11 +11,11 @@ import { EmpresaService } from 'src/app/services/empresa.service';
 })
 export class ListEmpresaPageComponent implements OnInit {
 
-  public empresas: Empresa[] = [];
+  // public empresas: Empresa[] = [];
   public dataSource = new MatTableDataSource<Empresa>();
   public columnas: string[] = ['nombre', 'numeroDocumento', 'direccion', 'telefono', 'Acciones'];
   
-  constructor( private empresasService: EmpresaService, private router: Router) {}
+  constructor( private empresasService: EmpresaService, private router: Router ) {}
 
   ngOnInit(): void {
     this.empresasService.getEmpresas().subscribe( empresas => {
