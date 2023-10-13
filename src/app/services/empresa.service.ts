@@ -35,7 +35,9 @@ export class EmpresaService {
   }
 
   addEmpresa(empresa: Empresa) {
-    addDoc(collection(this.firestore, 'empresas'), empresa)
+    // addDoc(collection(this.firestore, 'empresas'), empresa)
+    const empresaRef = collection(this.firestore, 'empresas')
+    return addDoc(empresaRef, empresa)
   }
 
 }

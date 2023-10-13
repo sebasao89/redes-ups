@@ -4,57 +4,68 @@
         <b>Añadir / Editar una empresa </b>
         <small> Empresa</small>
       </h3>
-      <div>        
-        <div class="md:flex lg:flex col-span-3 gap-4">
-          <mat-form-field class="w-full">
-            <mat-label>Tipo de Documento</mat-label>
-            <mat-select required="">
-              <mat-option value="cedula">NIT</mat-option>
-              <mat-option value="pasaporte">Cédula</mat-option>
-              <!-- Agrega más tipos de documento si es necesario -->
-            </mat-select>
-          </mat-form-field>
-  
-          <mat-form-field class="w-full">
-            <mat-label>Número de Documento</mat-label>
-            <input matInput placeholder="Número de Documento" type="number" required="">
-          </mat-form-field>
-  
-          <mat-form-field class="w-full">
-            <mat-label>Dígito de Verificación</mat-label>
-            <input matInput placeholder="Dígito de Verificación">
-          </mat-form-field>
-        </div>
-        <div class="md:flex lg:flex col-span-3 gap-4">
-          <mat-form-field class="w-full">
-            <input matInput placeholder="Nombre" type="text" required="">
-          </mat-form-field>
-  
-          <mat-form-field class="w-full">
-            <input matInput placeholder="Dirección">
-          </mat-form-field>
-  
-          <mat-form-field class="w-full">
-            <input matInput placeholder="Teléfono">
-          </mat-form-field>
-        </div>
-        <div class="md:flex lg:flex col-span-3 gap-4">
-          <mat-form-field class="w-full">
-            <input matInput placeholder="Correo electrónico">
-          </mat-form-field>
+      <form [formGroup]="empresaForm" (submit)="onSubmit()">
+        <div>        
+          <div class="md:flex lg:flex col-span-3 gap-4">
+            <mat-form-field class="w-full">
+              <mat-label>Tipo de Documento</mat-label>
+              <mat-select required="" formControlName="tipoDocumento">
+                <mat-option value="cedula">NIT</mat-option>
+                <mat-option value="pasaporte">Cédula</mat-option>
+                <!-- Agrega más tipos de documento si es necesario -->
+              </mat-select>
+            </mat-form-field>
+    
+            <mat-form-field class="w-full">
+              <mat-label>Número de Documento</mat-label>
+              <input matInput placeholder="Número de Documento" type="number" required="" formControlName="numDocumento">
+            </mat-form-field>
+    
+            <mat-form-field class="w-full">
+              <mat-label>Dígito de Verificación</mat-label>
+              <input matInput placeholder="Dígito de Verificación" formControlName="digitoVerificacion">
+            </mat-form-field>
+          </div>
+          <div class="md:flex lg:flex col-span-3 gap-4">
+            <mat-form-field class="w-full">
+              <input matInput placeholder="Nombre" type="text" required formControlName="nombre">
+            </mat-form-field>
+    
+            <mat-form-field class="w-full">
+              <input matInput placeholder="Dirección" required formControlName="direccion">
+            </mat-form-field>
+    
+            <mat-form-field class="w-full">
+              <input matInput placeholder="Teléfono" formControlName="telefono">
+            </mat-form-field>
+          </div>
+          <div class="md:flex lg:flex col-span-3 gap-4">
+            <mat-form-field class="w-full">
+              <input matInput placeholder="Correo electrónico" formControlName="correo">
+            </mat-form-field>
 
-          <mat-form-field class="w-full">
-            <input matInput placeholder="Latitud" type="number">
-          </mat-form-field>
+            <mat-form-field class="w-full">
+              <input matInput placeholder="Latitud" type="number" formControlName="latitude">
+            </mat-form-field>
 
-          <mat-form-field class="w-full">
-            <input matInput placeholder="Longitud" type="number">
-          </mat-form-field>
-        </div>
-      </div>      
+            <mat-form-field class="w-full">
+              <input matInput placeholder="Longitud" type="number" formControlName="longitude">
+            </mat-form-field>
+          </div>
+          <div class="md:flex lg:flex col-span-3 gap-4">
+            <mat-form-field class="w-full">
+              <input matInput placeholder="descripcion" formArrayName="descripcion">
+            </mat-form-field>
+          </div>
+        </div>      
+      </form>  
       <div class="flex justify-center mb-10">
-        <button mat-raised-button color="primary" type="submit" class="mr-2">Guardar</button>
+        <button mat-raised-button color="primary" type="submit" class="mr-2" (click)="onSubmit()">Guardar</button>
         <button mat-raised-button color="warn" type="submit" class="mr-2">Eliminar</button>
       </div>
     </div>
   </div>
+
+  <!-- <pre>
+    {{ currentEmpresa | json}}
+  </pre> -->

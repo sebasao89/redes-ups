@@ -1,5 +1,5 @@
 export default interface Empresa {
-    id: number;
+    id?: number;
     tipoDocumento: TipoDocumento;
     numDocumento: number;
     digitoVerificacion?: number;
@@ -9,7 +9,7 @@ export default interface Empresa {
     correo: string;
     latitude?: number;
     longitude?: number;
-    description?: string
+    descripcion?: string
 }
 
 export enum TipoDocumento {

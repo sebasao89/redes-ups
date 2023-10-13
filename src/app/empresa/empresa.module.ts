@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { EmpresaRoutingModule } from './empresa-routing.module';
 import { MaterialModule } from '../material/material.module';
@@ -20,6 +21,7 @@ import { EmpresaPageComponent } from './pages/empresa-page/empresa-page.componen
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     EmpresaRoutingModule,
     MaterialModule,
     SharedModule

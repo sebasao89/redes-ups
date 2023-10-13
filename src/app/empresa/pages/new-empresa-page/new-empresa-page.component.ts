@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { TipoDocumento } from 'src/app/interfaces/empresa.interface';
+import Empresa, { TipoDocumento } from 'src/app/interfaces/empresa.interface';
+import { EmpresaService } from 'src/app/services/empresa.service';
 
 @Component({
   selector: 'app-new-empresa-page',
@@ -9,8 +10,10 @@ import { TipoDocumento } from 'src/app/interfaces/empresa.interface';
 })
 export class NewEmpresaPageComponent {
 
+  constructor( public empresaService: EmpresaService ) {}
+
   public empresaForm = new FormGroup({
-    // id: new FormControl(''),
+    id: new FormControl(''),
     tipoDocumento: new FormControl<TipoDocumento>( TipoDocumento.nit ),
     numDocumento: new FormControl<number>(0),
     digitoVerificacion: new FormControl<number>(0),
@@ -20,7 +23,23 @@ export class NewEmpresaPageComponent {
     correo: new FormControl<string>(''),
     latitude: new FormControl<number>(0),
     longitude: new FormControl<number>(0),
-    description: new FormControl<string>('')
+    descripcion: new FormControl<string>('')
   })
+
+  get currentEmpresa(): Empresa {
+    const hero = this.empresaForm.value as Empresa
+    return hero
+  }
+
+  async onSubmit() {
+    // console.log({
+    //   formIsValid: this.empresaForm.valid,
+    //   value: this.empresaForm.value
+    // })
+
+    if( this.empresaForm.invalid ) return
+    const response = await this.empresaService.addEmpresa(this.currentEmpresa)
+    console.log(response)
+  }
 
 }
