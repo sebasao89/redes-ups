@@ -68,10 +68,12 @@
 
   </table> -->
 
-  <div class="grid">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-4" *ngFor="let empresa of empresas">
-      <empresa-card [empresa]="empresa"></empresa-card>
-    </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <ng-container *ngFor="let empresa of empresas">
+      <div class="pt-4">
+        <empresa-card [empresa]="empresa"></empresa-card>
+      </div>
+    </ng-container>
   </div>
   
   
