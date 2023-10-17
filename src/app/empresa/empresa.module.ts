@@ -10,6 +10,7 @@ import { LayoutPagesComponent } from './pages/layout-pages/layout-pages.componen
 import { ListEmpresaPageComponent } from './pages/list-empresa-page/list-empresa-page.component';
 import { NewEmpresaPageComponent } from './pages/new-empresa-page/new-empresa-page.component';
 import { EmpresaPageComponent } from './pages/empresa-page/empresa-page.component';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { EmpresaPageComponent } from './pages/empresa-page/empresa-page.componen
     LayoutPagesComponent,
     ListEmpresaPageComponent,
     NewEmpresaPageComponent,
-    EmpresaPageComponent
+    EmpresaPageComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,

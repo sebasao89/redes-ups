@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ empresa.nombre }}</mat-card-title>
+        <mat-card-subtitle>{{ empresa.direccion }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="mt-2">
+        <!-- <h4>{{ empresa.numDocumento }}</h4> -->
+        <p>
+            <strong>{{ empresa.tipoDocumento | titlecase }}: </strong>{{ empresa.numDocumento }}
+        </p>
+        <br>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions class="flex justify-between items-center">
+        <button mat-button mat-raised color="primary" [routerLink]="['/empresas/edit', empresa.id]">
+            <mat-icon>edit</mat-icon>
+            Editar
+        </button>
+
+        <button mat-button mat-raised color="primary">
+            <mat-icon>more_horiz</mat-icon>
+            Más
+        </button>
+    </mat-card-actions>
+</mat-card>
