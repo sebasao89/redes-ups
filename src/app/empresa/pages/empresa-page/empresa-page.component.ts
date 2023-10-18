@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { switchMap } from 'rxjs';
+import { delay, switchMap } from 'rxjs';
 import Empresa from 'src/app/interfaces/empresa.interface';
 import { EmpresaService } from 'src/app/services/empresa.service';
 
@@ -19,6 +19,7 @@ export class EmpresaPageComponent implements OnInit {
 
     this.activatedRoute.params
     .pipe(
+      delay(1000),
       switchMap( ({id}) => this.empresaService.getEmpresaById(id) ),
     )
     .subscribe(
@@ -27,6 +28,7 @@ export class EmpresaPageComponent implements OnInit {
           this.router.navigate(['/empresas/list-empresas']);
         } else {
           // console.log(empresa);
+          this.empresa = empresa
         }
       },
       (error) => {

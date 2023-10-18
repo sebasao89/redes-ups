@@ -1,3 +1,22 @@
-<p>empresa-page works!</p>
+<div class="grid">
+    <ng-template #divLoading>
+        <div class="grid-cols-1">
+            <mat-spinner></mat-spinner>
+        </div>
+    </ng-template>
 
-<div> {{ empresa }}</div>
+    <div *ngIf="empresa; else divLoading">
+        <!-- {{ empresa | json}} -->
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{ empresa.nombre }}</mat-card-title>
+                <mat-card-subtitle>{{ empresa.direccion }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p><strong>{{ empresa.tipoDocumento }}:</strong> {{ empresa.numDocumento }}</p>
+                <p><strong>Telefono:</strong> {{ empresa.telefono }}</p>
+                <p><strong>Correo electronico:</strong> {{ empresa.correo }}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
