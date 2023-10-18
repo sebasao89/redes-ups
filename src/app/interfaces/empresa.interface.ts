@@ -1,5 +1,5 @@
 export default interface Empresa {
-    id?: number;
+    id?: string;
     tipoDocumento: TipoDocumento;
     numDocumento: number;
     digitoVerificacion?: number;
