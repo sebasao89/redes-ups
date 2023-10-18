@@ -12,7 +12,7 @@ import { EmpresaService } from 'src/app/services/empresa.service';
 export class ListEmpresaPageComponent implements OnInit {
 
   public empresas: Empresa[] = [];
-  public dataSource = new MatTableDataSource<Empresa>();
+  // public dataSource = new MatTableDataSource<Empresa>();
   public columnas: string[] = ['nombre', 'numeroDocumento', 'direccion', 'telefono', 'Acciones'];
   
   constructor( private empresasService: EmpresaService, private router: Router ) {}
@@ -25,9 +25,6 @@ export class ListEmpresaPageComponent implements OnInit {
     })
   }
 
-  getEmpresaById(empresaId: string) {
-    this.router.navigate(['empresas/', empresaId])
-  }
 
 
 }

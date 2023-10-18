@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { switchMap } from 'rxjs';
 import Empresa from 'src/app/interfaces/empresa.interface';
 import { EmpresaService } from 'src/app/services/empresa.service';
 
@@ -10,24 +11,29 @@ import { EmpresaService } from 'src/app/services/empresa.service';
 })
 export class EmpresaPageComponent implements OnInit {
 
-  public empresaId: string | null = ""
+  public empresa?: Empresa;
 
-  constructor( private empresaService: EmpresaService, private activeRoute: ActivatedRoute) {}
+  constructor( private empresaService: EmpresaService, private activatedRoute: ActivatedRoute, private router: Router ) {}
 
   ngOnInit(): void {
 
-    this.activeRoute.paramMap.subscribe(async (params) => {
-        const id = params.get('id');
-        this.empresaId = id !== null ? id : '';
-
-        try {
-            const empresaData = await this.empresaService.getEmpresaById(this.empresaId);
-            console.log(empresaData);
-        } catch (error) {
-            console.error(error);
+    this.activatedRoute.params
+    .pipe(
+      switchMap( ({id}) => this.empresaService.getEmpresaById(id) ),
+    )
+    .subscribe(
+      (empresa) => {
+        if (!empresa) {
+          this.router.navigate(['/empresas/list-empresas']);
+        } else {
+          // console.log(empresa);
         }
-    });
-
+      },
+      (error) => {
+        console.error('Error:', error);
+        this.router.navigate(['/empresas/list-empresas']);
+      }
+    );
 
   }
 
