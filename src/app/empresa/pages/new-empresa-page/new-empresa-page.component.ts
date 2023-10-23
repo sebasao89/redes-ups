@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
+
 import Empresa, { TipoDocumento } from 'src/app/interfaces/empresa.interface';
 import { EmpresaService } from 'src/app/services/empresa.service';
+
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-new-empresa-page',
@@ -10,7 +15,7 @@ import { EmpresaService } from 'src/app/services/empresa.service';
 })
 export class NewEmpresaPageComponent {
 
-  constructor( public empresaService: EmpresaService ) {}
+  constructor( public empresaService: EmpresaService, private snackBar: MatSnackBar, private router: Router ) {}
 
   public empresaForm = new FormGroup({
     id: new FormControl(),
@@ -27,8 +32,8 @@ export class NewEmpresaPageComponent {
   })
 
   get currentEmpresa(): Empresa {
-    const hero = this.empresaForm.value as Empresa
-    return hero
+    const empresa = this.empresaForm.value as Empresa
+    return empresa
   }
 
   async onSubmit() {
@@ -39,7 +44,25 @@ export class NewEmpresaPageComponent {
 
     if( this.empresaForm.invalid ) return
     const response = await this.empresaService.addEmpresa(this.currentEmpresa)
-    console.log(response)
+    // console.log(response)
+    if (response) {
+      this.empresaForm.reset()
+      this.openSnackBar('Empresa añadida', 'X' )
+      setTimeout(() => {
+        this.router.navigate(['/empresas/list-empresas']);
+      }, 2000);
+    } else {
+      this.openSnackBar('Error al añadir', "X")
+    
+    }
   }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2500,
+    });
+  }
+
+  
 
 }
