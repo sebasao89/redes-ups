@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import Empresa from 'src/app/interfaces/empresa.interface';
 import { EmpresaService } from 'src/app/services/empresa.service';
+import { delay, pipe } from 'rxjs';
 
 @Component({
   selector: 'app-list-empresa-page',
@@ -18,7 +19,9 @@ export class ListEmpresaPageComponent implements OnInit {
   constructor( private empresasService: EmpresaService, private router: Router ) {}
 
   ngOnInit(): void {
-    this.empresasService.getEmpresas().subscribe( empresas => {
+    this.empresasService.getEmpresas().pipe(
+      // delay(2000)
+    ).subscribe( empresas => {
       // console.log(empresas)
       this.empresas = empresas
       // this.dataSource.data = empresas

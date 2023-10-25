@@ -1,5 +1,8 @@
 <div class="mb-5 mx-4">
 
+  <ng-template #loading>
+    <app-loading></app-loading>
+  </ng-template>
 <!-- <table class="mat-elevation-z8">
     <thead>
       <tr>
@@ -68,14 +71,15 @@
 
   </table> -->
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-    <ng-container *ngFor="let empresa of empresas">
-      <div class="pt-4">
-        <empresa-card [empresa]="empresa"></empresa-card>
-      </div>
-    </ng-container>
+  <div *ngIf="empresas.length >= 1; else loading">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <ng-container *ngFor="let empresa of empresas">
+        <div class="pt-4">
+          <empresa-card [empresa]="empresa"></empresa-card>
+        </div>
+      </ng-container>
+    </div>
   </div>
-  
   
 </div>
 
