@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData, doc, getDoc, addDoc, query, where} from '@angular/fire/firestore';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { Firestore, collection, collectionData, doc, getDoc, getDocs, addDoc, query, where} from '@angular/fire/firestore';
 import Empresa from '../interfaces/empresa.interface';
 import { Observable, from, map, of } from 'rxjs';
 
@@ -40,9 +39,13 @@ export class EmpresaService {
     return addDoc(this.empresasRef, empresa)
   }
 
-  // searchEmpresa(nombre: string): Observable<Empresa[]> {
-  //   return this.firestore.collection<Empresa>('empresas', ref => ref.where('nombre', '==', nombre)).valueChanges({ idField: 'id' });
+  // searchEmpresa(value: string): Observable<Empresa[]> {
+  //   const empresaRef = collection(this.firestore, 'empresas');
+  //   const q = query(empresaRef, where("nombre", "==", value))
+
+    
   // }
-  
+
+
 
 }

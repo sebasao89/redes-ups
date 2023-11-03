@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import Empresa from 'src/app/interfaces/empresa.interface';
 import { EmpresaService } from 'src/app/services/empresa.service';
-import { delay, pipe } from 'rxjs';
+import { Observable, delay, pipe } from 'rxjs';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-list-empresa-page',
@@ -15,6 +16,7 @@ export class ListEmpresaPageComponent implements OnInit {
   public empresas: Empresa[] = [];
   // public dataSource = new MatTableDataSource<Empresa>();
   public columnas: string[] = ['nombre', 'numeroDocumento', 'direccion', 'telefono', 'Acciones'];
+  public searchInput = new FormControl('');
   
   constructor( private empresasService: EmpresaService, private router: Router ) {}
 
@@ -26,6 +28,18 @@ export class ListEmpresaPageComponent implements OnInit {
       this.empresas = empresas
       // this.dataSource.data = empresas
     })
+  }
+
+  searchEmpresa(): void {
+    const query = this.searchInput.value || "";
+
+    console.log(query)
+    
+    // this.empresasService.searchEmpresa(query).pipe().subscribe(
+    //   empresas => {
+    //     this.empresas = empresas
+    //   }
+    // )
   }
 
 

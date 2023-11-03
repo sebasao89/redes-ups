@@ -4,13 +4,16 @@
     <app-loading></app-loading>
   </ng-template>
 
-  <mat-form-field class="example-form-field mt-03 md:mt-0 w-full md:w-1/2">
-    <mat-label>Buscar</mat-label>
-    <input matInput type="text">
+  <!-- BUSCADOR -->
+  <mat-form-field class="example-form-field mt-3 md:mt-2 w-full lg:w-1/2">
+    <mat-label>Buscar empresa</mat-label>
+    <input matInput type="text" [formControl]="searchInput" (input)="searchEmpresa()">
     <button matSuffix mat-icon-button aria-label="Clear">
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
+
+  {{ searchInput.value | json }}
 <!-- <table class="mat-elevation-z8">
     <thead>
       <tr>
@@ -82,7 +85,7 @@
   <div *ngIf="empresas.length >= 1; else loading">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
       <ng-container *ngFor="let empresa of empresas">
-        <div class="pt-4">
+        <div>
           <empresa-card [empresa]="empresa"></empresa-card>
         </div>
       </ng-container>
