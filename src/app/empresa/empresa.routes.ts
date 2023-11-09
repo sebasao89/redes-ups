@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { LayoutPagesComponent } from './pages/layout-pages/layout-pages.component';
 import { NewEmpresaPageComponent } from './pages/new-empresa-page/new-empresa-page.component';
 import { ListEmpresaPageComponent } from './pages/list-empresa-page/list-empresa-page.component';
 import { EmpresaPageComponent } from './pages/empresa-page/empresa-page.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: LayoutPagesComponent,
@@ -34,9 +33,3 @@ const routes: Routes = [
     ]
   }
 ];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class EmpresaRoutingModule { }
