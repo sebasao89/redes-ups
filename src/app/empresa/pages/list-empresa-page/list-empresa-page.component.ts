@@ -5,6 +5,7 @@ import Empresa from 'src/app/interfaces/empresa.interface';
 import { EmpresaService } from 'src/app/services/empresa.service';
 import { Observable, delay, pipe } from 'rxjs';
 import { FormControl } from '@angular/forms';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 
 @Component({
   selector: 'app-list-empresa-page',
@@ -31,10 +32,14 @@ export class ListEmpresaPageComponent implements OnInit {
   }
 
   searchEmpresa(): void {
-    const query = this.searchInput.value || "";
+    const vlrBuscar = this.searchInput.value || "";
 
-    console.log(query)
+    console.log(vlrBuscar)
     
+    const empresasQuery = query(this.empresasService.empresasRef, where('nombre', '==', vlrBuscar));
+    const querySnapshot = getDocs(empresasQuery);
+    
+    console.log(querySnapshot)
     // this.empresasService.searchEmpresa(query).pipe().subscribe(
     //   empresas => {
     //     this.empresas = empresas
