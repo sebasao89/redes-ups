@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { EmpresaRoutingModule } from './empresa-routing.module';
-import { MaterialModule } from '../material/material.module';
-import { SharedModule } from '../shared/shared.module';
+
+
 
 import { LayoutPagesComponent } from './pages/layout-pages/layout-pages.component';
 import { ListEmpresaPageComponent } from './pages/list-empresa-page/list-empresa-page.component';
@@ -16,17 +16,15 @@ import { LoadingComponent } from '../shared/components/loading/loading.component
 
 @NgModule({
     imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        EmpresaRoutingModule,
-        MaterialModule,
-        SharedModule,
-        LayoutPagesComponent,
-        ListEmpresaPageComponent,
-        NewEmpresaPageComponent,
-        EmpresaPageComponent,
-        CardComponent,
-        LoadingComponent
-    ]
+    CommonModule,
+    ReactiveFormsModule,
+    EmpresaRoutingModule,
+    LayoutPagesComponent,
+    ListEmpresaPageComponent,
+    NewEmpresaPageComponent,
+    EmpresaPageComponent,
+    CardComponent,
+    LoadingComponent
+]
 })
 export class EmpresaModule { }

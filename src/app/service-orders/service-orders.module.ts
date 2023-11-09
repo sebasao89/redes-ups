@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ServiceOrdersRoutingModule } from './service-orders-routing.module';
-import { MaterialModule } from '../material/material.module';
-import { SharedModule } from '../shared/shared.module';
+
+
 
 import { LayoutPagesComponent } from './pages/layout-pages/layout-pages.component';
 import { OrderPageComponent } from './pages/order-page/order-page.component';
@@ -13,14 +13,12 @@ import { NewOrderPageComponent } from './pages/new-order-page/new-order-page.com
 
 @NgModule({
     imports: [
-        CommonModule,
-        ServiceOrdersRoutingModule,
-        MaterialModule,
-        SharedModule,
-        LayoutPagesComponent,
-        OrderPageComponent,
-        ListOrderPageComponent,
-        NewOrderPageComponent
-    ]
+    CommonModule,
+    ServiceOrdersRoutingModule,
+    LayoutPagesComponent,
+    OrderPageComponent,
+    ListOrderPageComponent,
+    NewOrderPageComponent
+]
 })
 export class ServiceOrdersModule { }
