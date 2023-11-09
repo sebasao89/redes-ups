@@ -3,11 +3,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { delay, switchMap } from 'rxjs';
 import Empresa from 'src/app/interfaces/empresa.interface';
 import { EmpresaService } from 'src/app/services/empresa.service';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { NgIf } from '@angular/common';
+import { LoadingComponent } from '../../../shared/components/loading/loading.component';
 
 @Component({
-  selector: 'app-empresa-page',
-  templateUrl: './empresa-page.component.html',
-  styleUrls: ['./empresa-page.component.scss']
+    selector: 'app-empresa-page',
+    templateUrl: './empresa-page.component.html',
+    styleUrls: ['./empresa-page.component.scss'],
+    standalone: true,
+    imports: [LoadingComponent, NgIf, MatCardModule, MatListModule]
 })
 export class EmpresaPageComponent implements OnInit {
 

@@ -8,14 +8,12 @@ import { LoginPagesComponent } from './pages/login-pages/login-pages.component';
 
 
 @NgModule({
-  declarations: [
-    LayoutPagesComponent,
-    LoginPagesComponent
-  ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
-    MaterialModule
-  ]
+    imports: [
+        CommonModule,
+        AuthRoutingModule,
+        MaterialModule,
+        LayoutPagesComponent,
+        LoginPagesComponent
+    ]
 })
 export class AuthModule { }

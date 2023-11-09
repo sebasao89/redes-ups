@@ -12,17 +12,15 @@ import { NewOrderPageComponent } from './pages/new-order-page/new-order-page.com
 
 
 @NgModule({
-  declarations: [
-    LayoutPagesComponent,
-    OrderPageComponent,
-    ListOrderPageComponent,
-    NewOrderPageComponent,
-  ],
-  imports: [
-    CommonModule,
-    ServiceOrdersRoutingModule,
-    MaterialModule,
-    SharedModule
-  ]
+    imports: [
+        CommonModule,
+        ServiceOrdersRoutingModule,
+        MaterialModule,
+        SharedModule,
+        LayoutPagesComponent,
+        OrderPageComponent,
+        ListOrderPageComponent,
+        NewOrderPageComponent
+    ]
 })
 export class ServiceOrdersModule { }

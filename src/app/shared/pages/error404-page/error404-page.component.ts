@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-error404-page',
-  templateUrl: './error404-page.component.html',
-  styleUrls: ['./error404-page.component.scss']
+    selector: 'app-error404-page',
+    templateUrl: './error404-page.component.html',
+    styleUrls: ['./error404-page.component.scss'],
+    standalone: true
 })
 export class Error404PageComponent {
 

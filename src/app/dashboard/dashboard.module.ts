@@ -8,14 +8,12 @@ import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
-  declarations: [
-    LayoutComponent
-  ],
-  imports: [
-    CommonModule,
-    DashboardRoutingModule,
-    MaterialModule,
-    SharedModule
-  ]
+    imports: [
+        CommonModule,
+        DashboardRoutingModule,
+        MaterialModule,
+        SharedModule,
+        LayoutComponent
+    ]
 })
 export class DashboardModule { }

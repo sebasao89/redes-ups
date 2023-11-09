@@ -8,8 +8,8 @@ describe('OrderPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [OrderPageComponent]
-    });
+    imports: [OrderPageComponent]
+});
     fixture = TestBed.createComponent(OrderPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

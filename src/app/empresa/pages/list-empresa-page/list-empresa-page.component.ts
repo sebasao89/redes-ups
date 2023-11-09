@@ -4,13 +4,22 @@ import { MatTableDataSource } from '@angular/material/table';
 import Empresa from 'src/app/interfaces/empresa.interface';
 import { EmpresaService } from 'src/app/services/empresa.service';
 import { Observable, delay, pipe } from 'rxjs';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { collection, query, where, getDocs } from 'firebase/firestore';
+import { CardComponent } from '../../components/card/card.component';
+import { NgIf, NgFor, JsonPipe } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { LoadingComponent } from '../../../shared/components/loading/loading.component';
 
 @Component({
-  selector: 'app-list-empresa-page',
-  templateUrl: './list-empresa-page.component.html',
-  styleUrls: ['./list-empresa-page.component.scss']
+    selector: 'app-list-empresa-page',
+    templateUrl: './list-empresa-page.component.html',
+    styleUrls: ['./list-empresa-page.component.scss'],
+    standalone: true,
+    imports: [LoadingComponent, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatButtonModule, MatIconModule, NgIf, NgFor, CardComponent, JsonPipe]
 })
 export class ListEmpresaPageComponent implements OnInit {
 

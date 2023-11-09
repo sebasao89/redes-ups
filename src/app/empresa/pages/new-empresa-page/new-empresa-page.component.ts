@@ -1,17 +1,24 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import Empresa, { TipoDocumento } from 'src/app/interfaces/empresa.interface';
 import { EmpresaService } from 'src/app/services/empresa.service';
 
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @Component({
-  selector: 'app-new-empresa-page',
-  templateUrl: './new-empresa-page.component.html',
-  styleUrls: ['./new-empresa-page.component.scss']
+    selector: 'app-new-empresa-page',
+    templateUrl: './new-empresa-page.component.html',
+    styleUrls: ['./new-empresa-page.component.scss'],
+    standalone: true,
+    imports: [ReactiveFormsModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatInputModule, MatButtonModule]
 })
 export class NewEmpresaPageComponent {
 

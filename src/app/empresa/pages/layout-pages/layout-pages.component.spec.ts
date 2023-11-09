@@ -8,8 +8,8 @@ describe('LayoutPagesComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [LayoutPagesComponent]
-    });
+    imports: [LayoutPagesComponent]
+});
     fixture = TestBed.createComponent(LayoutPagesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

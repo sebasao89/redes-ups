@@ -15,20 +15,18 @@ import { LoadingComponent } from '../shared/components/loading/loading.component
 
 
 @NgModule({
-  declarations: [
-    LayoutPagesComponent,
-    ListEmpresaPageComponent,
-    NewEmpresaPageComponent,
-    EmpresaPageComponent,
-    CardComponent,
-    LoadingComponent
-  ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    EmpresaRoutingModule,
-    MaterialModule,
-    SharedModule
-  ]
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        EmpresaRoutingModule,
+        MaterialModule,
+        SharedModule,
+        LayoutPagesComponent,
+        ListEmpresaPageComponent,
+        NewEmpresaPageComponent,
+        EmpresaPageComponent,
+        CardComponent,
+        LoadingComponent
+    ]
 })
 export class EmpresaModule { }

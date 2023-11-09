@@ -8,8 +8,8 @@ describe('LoginPagesComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [LoginPagesComponent]
-    });
+    imports: [LoginPagesComponent]
+});
     fixture = TestBed.createComponent(LoginPagesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

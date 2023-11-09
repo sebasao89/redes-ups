@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 export interface PeriodicElement {
   name: string;
@@ -21,9 +27,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-list-order-page',
-  templateUrl: './list-order-page.component.html',
-  styleUrls: ['./list-order-page.component.scss']
+    selector: 'app-list-order-page',
+    templateUrl: './list-order-page.component.html',
+    styleUrls: ['./list-order-page.component.scss'],
+    standalone: true,
+    imports: [MatCardModule, MatFormFieldModule, MatInputModule, MatTableModule, MatButtonModule, MatIconModule]
 })
 export class ListOrderPageComponent {
 
