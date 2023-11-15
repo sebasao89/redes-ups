@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "redes-ups:build:production"
+              "buildTarget": "redes-ups:build:production"
             },
             "development": {
-              "browserTarget": "redes-ups:build:development"
+              "buildTarget": "redes-ups:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "redes-ups:build"
+            "buildTarget": "redes-ups:build"
           }
         },
         "test": {
